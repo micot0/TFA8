@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +13,16 @@
         <a href="{{ url('/about') }}">About</a>
         <a href="{{ route('customers.index') }}">Customer Accounts</a>
         <a href="{{ route('users.index') }}">User Accounts</a>
+
+        @auth
+            <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+                @csrf
+                <button type="submit"
+                    style="background: none; border: none; color: white; cursor: pointer; font: inherit;">
+                    Logout
+                </button>
+            </form>
+        @endauth
     </nav>
 
     <main class="container">
