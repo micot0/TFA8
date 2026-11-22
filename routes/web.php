@@ -1,3 +1,4 @@
+```php
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -8,8 +9,6 @@ use App\Http\Controllers\UserController;
 Route::get('/', [PageController::class, 'home']);
 Route::get('/about', [PageController::class, 'about']);
 
-Route::resource('customers', CustomerController::class)
-    ->only(['index', 'create', 'store', 'edit', 'update']);
+Route::resource('customers', CustomerController::class);
 
-Route::resource('users', UserController::class)
-    ->only(['index', 'create', 'store', 'edit', 'update']);
+Route::resource('users', UserController::class);
